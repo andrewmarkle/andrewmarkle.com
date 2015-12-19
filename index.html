@@ -2,22 +2,20 @@
 layout: default
 ---
 
-<div class="home">
 
-  <h1 class="page-heading">Posts</h1>
+      <aside class="profile-picture"></aside>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <section class="paragraph">
+        <h1>Hi, I'm Andrew!</h1>
+        <p>
+          I grew up in Calgary, studied film in university, worked on documentaries
+          in my 20s, travelled, made some money in real estate, moved to Japan with a woman
+          I had just met, fell in love in Kyoto, and finally settled in Ottawa
+          to launch a successful dog-walking business.
+        </p>
+        <p>
+          Phew! During that time, I taught myself how to code and design for the web.
+          Here's my story and what I've been working on.
+        </p>
+      </section>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
