@@ -2369,7 +2369,13 @@ section {
   content: ""; }
 
 body {
-  color: red; }
+  color: #4f4f4f;
+  background: #f2eff0; }
+  body a {
+    color: #4f4f4f; }
+  body a:hover {
+    color: black;
+    text-decoration: underline; }
 
 wrapper {
   max-width: 68em;
@@ -2395,7 +2401,7 @@ section {
       margin-right: 0; }
   section .profile-picture {
     background: center no-repeat;
-    background-image: url("{{  andrew  }}.png");
+    background-image: url("andrew.png");
     height: 200px;
     width: 200px;
     border-top-left-radius: 50%;
@@ -2410,7 +2416,7 @@ section {
     margin-top: 64px; }
     @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
       section .profile-picture {
-        background-image: url("{{  andrew  }}_2x.png");
+        background-image: url("andrew_2x.png");
         background-size: 200px; } }
 
 .paragraph {
@@ -2438,10 +2444,22 @@ section {
   display: block;
   margin-right: 2.35765%;
   width: 48.82117%;
-  margin-left: 25.58941%;
-  padding: 20px 20px 70px 30px; }
+  margin-left: 25.58941%; }
   .footer:last-child {
     margin-right: 0; }
+  .footer li {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%;
+    text-align: center;
+    padding-bottom: 60px; }
+    .footer li:last-child {
+      margin-right: 0; }
+    .footer li:nth-child(3n) {
+      margin-right: 0; }
+    .footer li:nth-child(3n+1) {
+      clear: left; }
   @media screen and (max-width: 500px) {
     .footer {
       margin-right: 0;

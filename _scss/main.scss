@@ -9,7 +9,16 @@
 
 
 body {
-  color: red;
+  color: $soft-black;
+  background: $soft-gray;
+  a {
+    color: $soft-black;
+  }
+
+  a:hover {
+    color: darken($soft-black, 50%);
+    text-decoration: underline;
+  }
 }
 
 wrapper {
@@ -32,7 +41,7 @@ section {
 
   .profile-picture {
     background: center no-repeat;
-    @include retina-image("{{ "andrew" }}", 200px);
+    @include retina-image("andrew" , 200px);
     height: 200px;
     width: 200px;
     @include border-top-radius(50%);
@@ -58,8 +67,14 @@ section {
 
 .footer {
    @include span-columns(6);
-  @include shift(3);
-  padding: 20px 20px 70px 30px;
+   @include shift(3);
+
+  li {
+    @include span-columns(4);
+    @include omega(3n);
+    text-align: center;
+    padding-bottom: 60px;
+  }
 
   @include media($mobile) {
     @include omega();
