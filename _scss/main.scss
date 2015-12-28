@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "base/base";
+@import "type";
+@import "font-awesome/font-awesome";
+@import "variables";
+
+
+body {
+  color: red;
+}
+
+wrapper {
+  @include outer-container;
+}
+
+section {
+  background: $soft-white;
+
+  .header {
+    @include span-columns(12);
+
+    border-top: 8px solid  $soft-gray;
+    min-height: 56px;
+
+    // Positioning context for the mobile navigation icon
+    position: relative;
+    padding-top: 60px;
+  }
+
+  .profile-picture {
+    background: center no-repeat;
+    @include retina-image("{{ "andrew" }}", 200px);
+    height: 200px;
+    width: 200px;
+    @include border-top-radius(50%);
+    @include border-right-radius(50%);
+    @include border-bottom-radius(50%);
+    @include border-left-radius(50%);
+    margin: 0 auto;
+    margin-top: 64px;
+  }
+}
+
+.paragraph {
+  @include span-columns(6);
+  @include shift(3);
+  padding: 20px 20px 70px 30px;
+
+  @include media($mobile) {
+    @include omega();
+    @include span-columns(4);
+    @include shift(0);
+  }
+}
+
+.footer {
+   @include span-columns(6);
+  @include shift(3);
+  padding: 20px 20px 70px 30px;
+
+  @include media($mobile) {
+    @include omega();
+    @include span-columns(4);
+    @include shift(0);
+  }
+}
+
+
