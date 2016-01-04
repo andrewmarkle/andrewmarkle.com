@@ -2438,6 +2438,8 @@ section {
       margin-left: 0%; }
       .paragraph:last-child {
         margin-right: 0; } }
+  .paragraph h1 {
+    padding-bottom: 40px; }
 
 .footer {
   float: left;
@@ -2448,25 +2450,45 @@ section {
   .footer:last-child {
     margin-right: 0; }
   .footer li {
+    text-align: center;
+    padding: 0px 0 100px 0;
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 31.76157%;
-    text-align: center;
-    padding-bottom: 60px; }
+    width: 31.76157%; }
     .footer li:last-child {
       margin-right: 0; }
     .footer li:nth-child(3n) {
       margin-right: 0; }
     .footer li:nth-child(3n+1) {
       clear: left; }
+  .footer .github-icon {
+    text-align: right; }
+    @media screen and (max-width: 500px) {
+      .footer .github-icon {
+        text-align: center; } }
+  .footer .twitter-icon {
+    text-align: left; }
+    @media screen and (max-width: 500px) {
+      .footer .twitter-icon {
+        text-align: center; } }
   @media screen and (max-width: 500px) {
     .footer {
-      margin-right: 0;
+      margin-left: 0%;
       float: left;
       display: block;
       margin-right: 7.42297%;
-      width: 100%;
-      margin-left: 0%; }
+      width: 100%; }
       .footer:last-child {
-        margin-right: 0; } }
+        margin-right: 0; }
+      .footer:nth-child(3n) {
+        margin-right: 0; }
+      .footer:nth-child(3n+1) {
+        clear: left; } }
+
+.js-fade-element-hide {
+  opacity: 0; }
+
+.js-fade-element-show {
+  transition: all 0.4s ease-in-out;
+  opacity: 1; }

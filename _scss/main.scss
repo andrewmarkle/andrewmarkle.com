@@ -63,6 +63,8 @@ section {
     @include span-columns(4);
     @include shift(0);
   }
+
+  h1 { padding-bottom: 40px;}
 }
 
 .footer {
@@ -70,17 +72,42 @@ section {
    @include shift(3);
 
   li {
+    text-align: center;
+    padding: 0px 0 100px 0;
     @include span-columns(4);
     @include omega(3n);
-    text-align: center;
-    padding-bottom: 60px;
+  }
+
+  .github-icon {
+    text-align: right;
+    @include media($mobile) {
+      text-align: center;
+    }
+  }
+  .twitter-icon {
+    text-align: left;
+    @include media($mobile) {
+      text-align: center;
+    }
   }
 
   @include media($mobile) {
-    @include omega();
-    @include span-columns(4);
     @include shift(0);
+    @include span-columns(4);
+    @include omega(3n);
   }
+
 }
+
+.js-fade-element-hide {
+  opacity: 0;
+}
+
+.js-fade-element-show {
+  @include transition (all 0.4s ease-in-out);
+  opacity: 1;
+}
+
+
 
 
