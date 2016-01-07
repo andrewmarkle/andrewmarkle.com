@@ -2372,10 +2372,10 @@ body {
   color: #4f4f4f;
   background: #f2eff0; }
   body a {
-    color: #4f4f4f; }
-  body a:hover {
-    color: black;
+    color: #4f4f4f;
     text-decoration: underline; }
+  body a:hover {
+    color: black; }
 
 wrapper {
   max-width: 68em;

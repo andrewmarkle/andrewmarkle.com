@@ -21,7 +21,7 @@ github_username:  andrewmarkle
 markdown: kramdown
 
 # Gems
-gems: [bourbon, neat, bitters]
+gems: [bourbon, bitters]
 
 sass:
     style: compressed

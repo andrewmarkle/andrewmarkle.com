@@ -13,11 +13,11 @@ body {
   background: $soft-gray;
   a {
     color: $soft-black;
+    text-decoration: underline;
   }
 
   a:hover {
-    color: darken($soft-black, 50%);
-    text-decoration: underline;
+    color: darken($soft-black, 80%);
   }
 }
 
