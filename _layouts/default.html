@@ -4,15 +4,15 @@
   {% include head.html %}
 
   <body>
-
-    <section>
+    <div class="wrapper-for-content-outside-of-footer">
       <div class="header">
         <div class="wrapper">
           {{ content }}
-          {% include footer.html %}
         </div>
       </div>
-    </section>
+    </div>
+    {% include footer.html %}
+
 
     <script src="https://use.typekit.net/jbd0fju.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>

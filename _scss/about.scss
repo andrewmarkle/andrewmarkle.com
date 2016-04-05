@@ -1,0 +1,12 @@
+.profile-picture {
+    background: center no-repeat;
+    @include retina-image("andrew" , 200px);
+    height: 200px;
+    width: 200px;
+    @include border-top-radius(50%);
+    @include border-right-radius(50%);
+    @include border-bottom-radius(50%);
+    @include border-left-radius(50%);
+    margin: 0 auto;
+    margin-top: 64px;
+}

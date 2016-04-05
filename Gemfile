@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'jekyll'
-
 gem 'bourbon'
 gem 'neat'
 gem 'bitters'
 gem 'github-pages'
+gem 'jekyll'
+gem 'kramdown'

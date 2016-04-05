@@ -25,6 +25,7 @@ section {
     border-right: none;
     border-top: none;
     margin: $base-spacing 0;
+    width: 100%;
   }
 
   p {
@@ -74,13 +75,8 @@ section {
   }
 
   code {
-    background: #F7F7F7;
-    border-radius: $base-border-radius * 1.5;
-    border: 1px solid #E0E0E0;
     font-size: 0.75em;
     font-style: normal;
-    padding: 0.1em 0.4em;
-    white-space: nowrap;
   }
 
   h2 code {
@@ -116,6 +112,30 @@ section {
       font-size: 1.2em;
       font-style: italic;
     }
+  }
+
+   .type {
+    border-bottom: 2px solid;
+    display: inline-block;
+    font-family: $sans-serif;
+    font-size: .7em;
+    font-weight: 800;
+    margin-bottom: 1em;
+    padding: .1em 0;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  span.subtle {
+    float: right;
+    font-family: $sans-serif;
+    font-size: .9em;
+    font-weight: 200;
+    margin-bottom: 1em;
+    padding: 0;
+    text-align: right;
+    text-transform: uppercase;
+    color: darken($light-gray, 20%);
   }
 
   a.link {
