@@ -32,9 +32,17 @@ section.post {
   }
 }
 
+// Table of contents
 section.post-index {
   padding: 40px 40px;
   text-align: left;
+
+  @include media($mobile) {
+    .subtle {
+      text-align: left;
+      padding-top: 10px;
+    }
+  }
   li {
     padding: 10px 0px;
   }
