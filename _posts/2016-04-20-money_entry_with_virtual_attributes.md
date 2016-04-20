@@ -5,7 +5,7 @@ title:  "Money Entry with Virtual Attributes"
 
 I recently discovered something called virtual attributes in Rails. They’re super cool and useful!
 
-The basic premise is simple. You, as a developer, want to store some data in your database in a particular format but not your user's want to enter it in a different format. Money is a great example. In Stripe’s API they store money as an integer with cent values.
+The basic premise is simple. You, as a developer, want to store some data in your database in a particular format but your user's want to enter it in a different format. Money is a great example. In Stripe’s API they store money as an integer with cent values.
 
 ```ruby
 #five dollars and ninetynice cents
