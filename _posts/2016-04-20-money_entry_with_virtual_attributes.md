@@ -5,7 +5,7 @@ title:  "Money Entry with Virtual Attributes"
 
 I recently discovered something called virtual attributes in Rails. They’re super cool and useful!
 
-The basic premise is simple. You, as a developer, want to store some data in your database in a particular format. Money is a great example. In Stripe’s API they store money as an integer with cent values.
+The basic premise is simple. You, as a developer, want to store some data in your database in a particular format but not your user's want to enter it in a different format. Money is a great example. In Stripe’s API they store money as an integer with cent values.
 
 ```ruby
 #five dollars and ninetynice cents
@@ -108,7 +108,7 @@ document.addEventListener("turbolinks:load", function() {
 });
 ```
 
-That’s it! You should have a nicely formatted money entry field that saves to a Stripe-friendly database format.
+That’s it! You should have a nicely formatted money entry field that saves to a Stripe-friendly database format. There are lots of possibilites to use virtual attributes. Plus it's even easier with [Rail's Attributes API](https://github.com/rails/rails/blob/master/activerecord/lib/active_record/attributes.rb). [Documentation](http://edgeapi.rubyonrails.org/classes/ActiveRecord/Attributes/ClassMethods.html) is a bit sparse right now but I'm looking forward to exploring this more!
 
 Get in touch if you have any questions or comments!
 
