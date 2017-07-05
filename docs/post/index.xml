@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Andrew Markle</title>
+    <link>http://andrewmarkle.com/post/</link>
+    <description>Recent content in Posts on Andrew Markle</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 May 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://andrewmarkle.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RailsConf Talk - Decoupling your models with form objects</title>
+      <link>http://andrewmarkle.com/post/2017-05-01-railsconf_talk_2017/</link>
+      <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrewmarkle.com/post/2017-05-01-railsconf_talk_2017/</guid>
+      <description>I gave a talk at RailsConf 2017 in Pheonix, Arizona. Such an amazing experience!
+ Here&amp;rsquo;s the blurb:
+Forms are a crucial part of every app and Rails has good defaults for building them—unless you need something complicated. Maybe you want a multi-step wizard? Or maybe you&amp;rsquo;d like to pluck attributes from any model? Validation becomes a pain point. So you introduce a state machine, or nest your models, or do some other calisthenic to get everything working.</description>
+    </item>
+    
+    <item>
+      <title>I Gave a Talk at the Ottawa Ruby Meetup</title>
+      <link>http://andrewmarkle.com/2016/05/05/youll-never-master-programming-talk/</link>
+      <pubDate>Thu, 05 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrewmarkle.com/2016/05/05/youll-never-master-programming-talk/</guid>
+      <description>I gave a talk at the Ottawa Ruby Meetup last week. It was lots of fun!
+ My talk was about the idea that mastery in programming is a constantly moving target. I argued that there is always more to learn. Always new things to master. The process is never finished. It&amp;rsquo;s a continual duality where you&amp;rsquo;ll go from newbie to expert—back and forth constantly.
+I talked about how to get competent in something quickly.</description>
+    </item>
+    
+    <item>
+      <title>Money Entry with Virtual Attributes</title>
+      <link>http://andrewmarkle.com/2016/04/20/money_entry_with_virtual_attributes/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrewmarkle.com/2016/04/20/money_entry_with_virtual_attributes/</guid>
+      <description>I recently discovered something called virtual attributes in Rails. They’re super cool and useful!
+The basic premise is simple. You, as a developer, want to store some data in your database in a particular format but your user&amp;rsquo;s want to enter it in a different format. Money is a great example. In Stripe’s API they store money as an integer with cent values.
+#five dollars and ninetynice cents 599  This is a great way to store money in a database but it’s a terrible format if it’s part of your user interface.</description>
+    </item>
+    
+    <item>
+      <title>Simple Multitenancy with Rails and Pundit</title>
+      <link>http://andrewmarkle.com/2016/04/06/multitenancy-with-pundit/</link>
+      <pubDate>Wed, 06 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrewmarkle.com/2016/04/06/multitenancy-with-pundit/</guid>
+      <description>I’m building an application where each user needs their own silo of data. They log in to the app and then can only see and edit their own stuff. There&amp;rsquo;s a name for this architecture and it&amp;rsquo;s called multitenancy.
+Think of it like a condo. The app is the condo building. The users are the tennants. Each tennant only has access to their own apartment. Inside each apartment they fill it up with all kinds of stuff (data) and your job (as Chief Condo Builder) is to make sure each apartment has a lock on it.</description>
+    </item>
+    
+  </channel>
+</rss>

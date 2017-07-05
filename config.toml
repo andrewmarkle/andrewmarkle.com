@@ -1,0 +1,15 @@
+baseURL = "http://andrewmarkle.com/"
+languageCode = "en-us"
+title = "Andrew Markle"
+theme = "hugo-theme-blueberry-detox"
+publishDir = "docs"
+
+[params]
+  title = "Andrew Markle"
+  description = "I'm Andrew Markle. I write code and give talks."
+  twitter_name = "andrewmarkle"
+  github = "andrewmarkle"
+
+[author]
+  homepage = "http://andrewmarkle.com"
+

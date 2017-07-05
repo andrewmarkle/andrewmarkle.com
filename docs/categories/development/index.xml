@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development on Andrew Markle</title>
+    <link>http://andrewmarkle.com/categories/development/</link>
+    <description>Recent content in Development on Andrew Markle</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 May 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://andrewmarkle.com/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RailsConf Talk - Decoupling your models with form objects</title>
+      <link>http://andrewmarkle.com/post/2017-05-01-railsconf_talk_2017/</link>
+      <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrewmarkle.com/post/2017-05-01-railsconf_talk_2017/</guid>
+      <description>I gave a talk at RailsConf 2017 in Pheonix, Arizona. Such an amazing experience!
+ Here&amp;rsquo;s the blurb:
+Forms are a crucial part of every app and Rails has good defaults for building them—unless you need something complicated. Maybe you want a multi-step wizard? Or maybe you&amp;rsquo;d like to pluck attributes from any model? Validation becomes a pain point. So you introduce a state machine, or nest your models, or do some other calisthenic to get everything working.</description>
+    </item>
+    
+  </channel>
+</rss>

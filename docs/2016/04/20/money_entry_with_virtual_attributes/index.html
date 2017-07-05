@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" prefix="og: http://ogp.me/ns#" xmlns:og="http://ogp.me/ns#"><!--<![endif]-->
+
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="author" content="">
+  
+	
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@https://twitter.com/andrewmarkle">
+        <meta name="twitter:creator" content="@https://twitter.com/andrewmarkle">
+        <meta name="twitter:domain" content="http://andrewmarkle.com/">
+	
+        <meta property="og:site_name" content="Andrew Markle">
+        <meta property="og:title" content="Andrew Markle">
+        <meta property="og:url" content="http://andrewmarkle.com/2016/04/20/money_entry_with_virtual_attributes/">
+        <meta property="og:description" content="I&#39;m Andrew Markle. I write code and give talks.">
+    
+        <meta property="og:type" content="article" />
+        <meta property="og:article:author" content="" />
+        <meta property="og:article:published_time" content="2016-04-20T00:00:00Z" />
+    
+        <meta name="generator" content="Hugo 0.24.1" />
+    <title>Money Entry with Virtual Attributes &middot; Andrew Markle</title>
+    <link rel="canonical" href="http://andrewmarkle.com/" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="">
+    <link rel="stylesheet" type="text/css" href="http://andrewmarkle.com/css/main.css"/>
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300|Montserrat:700" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="/js/prism.js"></script>
+</head>
+
+<body>
+<!--[if lt IE 7]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chrome/‎">install Google Chrome</a> to experience this site.</p><![endif]-->
+
+<header id="site-header">
+    <div class="container">
+        <a href="http://andrewmarkle.com/" alt="Andrew Markle"><h1 class="blog-title heading">Hey there.</h1></a>
+        <p class="blog-description">I&#39;m Andrew Markle. I write code and give talks.</p>
+    </div>
+</header>
+
+<main class="content" role="main">
+	<div class="container">
+		<article class="post">
+  <header class="post-header">
+        <h3 class="p-post-title">Money Entry with Virtual Attributes</h3>
+    </header>
+
+    <section class="post-content">
+        
+
+<p>I recently discovered something called virtual attributes in Rails. They’re super cool and useful!</p>
+
+<p>The basic premise is simple. You, as a developer, want to store some data in your database in a particular format but your user&rsquo;s want to enter it in a different format. Money is a great example. In Stripe’s API they store money as an integer with cent values.</p>
+
+<pre><code class="language-ruby">#five dollars and ninetynice cents
+  599
+</code></pre>
+
+<p>This is a great way to store money in a database but it’s a terrible format if it’s part of your user interface. I’m working on a program where users need to enter an amount (in dollars) as they create a plan. Ideally the user should be able to enter almost anything and it’ll just work.</p>
+
+<pre><code class="language-ruby"># five bucks
+5
+5.00
+5.0
+5.000009
+#all saved in the database as 500
+</code></pre>
+
+<p>To accomplish this goal we’re going to use a virtual attribute for the money entry (plus a sprinkle™ of javascript for the formatting). The idea behind using a virtual attribute is that we can use it to save the user’s money entry in memory, and then parse it to our database-friendly format.</p>
+
+<h2 id="tests">Tests</h2>
+
+<p>Let’s write a test.</p>
+
+<pre><code class="language-ruby">#spec/models/plan_spec.rb
+
+describe 'money is saved as an integer with cents' do
+  it 'tests value as integer' do
+    plan = Plan.new(dollars: 19)
+    expect(plan.amount_in_cents).to eq(1900)
+  end
+
+  it 'tests value as a fraction' do
+    plan = Plan.new(dollars: 19.99)
+    expect(plan.amount_in_cents).to eq(1999)
+  end
+
+  it 'tests value as a string' do
+    plan = Plan.new(dollars: '19')
+    expect(plan.amount_in_cents).to eq(1900)
+  end
+
+  it 'tests value as a string with a dollar sign' do
+    plan = Plan.new(dollars: '$19.99')
+    expect(plan.amount_in_cents).to eq(1999)
+  end
+
+  it 'tests value as a string with decimal' do
+    plan = Plan.new(dollars: '19.99')
+    expect(plan.amount_in_cents).to eq(1999)
+  end
+end
+</code></pre>
+
+<p>You’ll notice a couple things about this test. First we have two attributes. <code>Plan.dollars</code> and <code>Plan.amount_in_cents</code>. The dollars attribute is going to be our virtual attribute. It won’t be saved to the database. It won’t need a migration. We’re going to define it right in the model. Alternatively, the amount_in_cents attribute <strong>will</strong> be saved to the database.</p>
+
+<p>So first off we’ll add the amount_in_cents to our plan model.</p>
+
+<pre><code class="language-bash">rails g migration plan amount_in_cents:integer
+</code></pre>
+
+<p>Next, we’ll hop into the Plan model and define our virtual attribute.</p>
+
+<pre><code class="language-ruby">class Plan &lt; ApplicationRecord
+  #...
+  attr_accessor :dollars
+
+  def dollars=(value)
+    @dollars = update(amount_in_cents: value.to_money.cents)
+  end
+end
+</code></pre>
+
+<p>Let me explain. I’ve defined getter and setter methods for the dollars attribute (<code>attr_accessor :dollars</code>). I’m using the <a href="https://github.com/RubyMoney/money">Money gem</a> to parse the values into cents. I’ve overridden the setter method (<code>dollars=(value)</code>) which takes the user’s value to update our the amount_in_cents attribute. That value uses the money gem’s DSL to convert it to a money value(<code>.to_money</code>) and then into cents(<code>.cents</code>). Exactly what we need.</p>
+
+<p>That works for the business logic of our app. Our tests should be passing so let’s move over to the user interface level.</p>
+
+<h2 id="forms">Forms</h2>
+
+<p>There’s lots of good javascript libraries out there to help with money parsing. I decided to use the <a href="https://github.com/randoum/autonumeric-rails">Autonumeric-rails gem</a>. With the gem installed and added to our javascript.js manifest, all we have to do is add the dollars field to our plan form. (Note that the amount_in_cents is left out from the form).</p>
+
+<pre><code class="language-ruby">#app/views/plans/_form.html.erb
+#...
+&lt;div class=&quot;field&quot;&gt;
+  &lt;%= f.label :dollars %&gt;
+  &lt;%= f.text_field :dollars, data: {role: 'money', autonumeric: {aSign: '$'}} %&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>There are <a href="https://github.com/BobKnothe/autoNumeric#options">lots of options available</a> with how you want to format your dollars field. I’m keeping it pretty simple and I’m simply adding the dollar sign to the field.</p>
+
+<p>That’s pretty much it.</p>
+
+<p>It depends on your setup a bit to make sure that the autonumeric  javascript loads and updates itself as the user interacts with the form. I’m using Turbolinks5 so my js code looks something like this:</p>
+
+<pre><code class="language-javascript">document.addEventListener(&quot;turbolinks:load&quot;, function() {
+  $(document).trigger('refresh_autonumeric');
+});
+</code></pre>
+
+<p>That’s it! You should have a nicely formatted money entry field that saves to a Stripe-friendly database format. There are lots of possibilites to use virtual attributes. Plus it&rsquo;s even easier with <a href="https://github.com/rails/rails/blob/master/activerecord/lib/active_record/attributes.rb">Rail&rsquo;s Attributes API</a>. <a href="http://edgeapi.rubyonrails.org/classes/ActiveRecord/Attributes/ClassMethods.html">Documentation</a> is a bit sparse right now but I&rsquo;m looking forward to exploring this more!</p>
+
+<p>Get in touch if you have any questions or comments!</p>
+
+    </section>
+
+    <hr>
+
+    <footer class="post-footer">
+        <section class="f-1">
+            
+
+            <p class="f-post-time"><time datetime="2016-04-20T00:00:00Z">April 20, 2016</time></p>
+        </section>
+    </footer>
+</article>
+
+	</div>
+</main>
+<footer id="site-footer">
+    <div class="container">
+      
+        <a href="https://www.twitter.com/andrewmarkle" title="Twitter" target="_blank"><span class="tooltip"><i class="fa fa-twitter"></i></span></a>
+      
+      
+        <a href="https://www.github.com/andrewmarkle" title="GitHub" target="_blank"><span class="tooltip"><i class="fa fa-github"></i></span></a>
+      
+        <section></section>
+      </section>
+    </div>
+</footer>
+
+<script type="text/javascript" src="http://andrewmarkle.com/js/fittext.js"></script>
+<script type="text/javascript">
+  $(".heading").fitText();
+</script>
+
+
+
+</body>
+</html>

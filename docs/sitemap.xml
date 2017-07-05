@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://andrewmarkle.com/post/2017-05-01-railsconf_talk_2017/</loc>
+    <lastmod>2017-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrewmarkle.com/2016/05/05/youll-never-master-programming-talk/</loc>
+    <lastmod>2016-05-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrewmarkle.com/2016/04/20/money_entry_with_virtual_attributes/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrewmarkle.com/2016/04/06/multitenancy-with-pundit/</loc>
+    <lastmod>2016-04-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://andrewmarkle.com/</loc>
+    <lastmod>2017-05-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://andrewmarkle.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://andrewmarkle.com/categories/development/</loc>
+    <lastmod>2017-05-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://andrewmarkle.com/post/</loc>
+    <lastmod>2017-05-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://andrewmarkle.com/categories/rails/</loc>
+    <lastmod>2017-05-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://andrewmarkle.com/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
