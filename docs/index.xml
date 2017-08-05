@@ -65,14 +65,5 @@ The basic premise is simple. You, as a developer, want to store some data in you
 Think of it like a condo. The app is the condo building. The users are the tennants. Each tennant only has access to their own apartment. Inside each apartment they fill it up with all kinds of stuff (data) and your job (as Chief Condo Builder) is to make sure each apartment has a lock on it.</description>
     </item>
     
-    <item>
-      <title></title>
-      <link>http://andrewmarkle.com/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://andrewmarkle.com/about/</guid>
-      <description>something -- </description>
-    </item>
-    
   </channel>
 </rss>
