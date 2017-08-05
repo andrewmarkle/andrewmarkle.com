@@ -6,10 +6,21 @@
     <description>Recent content in Development on Andrew Markle</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 May 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Jul 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://andrewmarkle.com/categories/development/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Michael Feathers - Converting Queries into Commands</title>
+      <link>http://andrewmarkle.com/post/converting-queries-to-commands/</link>
+      <pubDate>Mon, 24 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrewmarkle.com/post/converting-queries-to-commands/</guid>
+      <description>&lt;p&gt;This is a key insight into OO from Michael Feather&amp;rsquo;s article on &lt;a href=&#34;https://michaelfeathers.silvrback.com/converting-queries-to-commands&#34;&gt;Converting Queries into Commands&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>RailsConf Talk - Decoupling your models with form objects</title>

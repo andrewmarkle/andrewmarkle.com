@@ -6,10 +6,21 @@
     <description>Recent content on Andrew Markle</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 May 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Jul 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://andrewmarkle.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Michael Feathers - Converting Queries into Commands</title>
+      <link>http://andrewmarkle.com/post/converting-queries-to-commands/</link>
+      <pubDate>Mon, 24 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrewmarkle.com/post/converting-queries-to-commands/</guid>
+      <description>&lt;p&gt;This is a key insight into OO from Michael Feather&amp;rsquo;s article on &lt;a href=&#34;https://michaelfeathers.silvrback.com/converting-queries-to-commands&#34;&gt;Converting Queries into Commands&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>RailsConf Talk - Decoupling your models with form objects</title>
@@ -52,6 +63,15 @@ The basic premise is simple. You, as a developer, want to store some data in you
       <guid>http://andrewmarkle.com/2016/04/06/multitenancy-with-pundit/</guid>
       <description>I’m building an application where each user needs their own silo of data. They log in to the app and then can only see and edit their own stuff. There&amp;rsquo;s a name for this architecture and it&amp;rsquo;s called multitenancy.
 Think of it like a condo. The app is the condo building. The users are the tennants. Each tennant only has access to their own apartment. Inside each apartment they fill it up with all kinds of stuff (data) and your job (as Chief Condo Builder) is to make sure each apartment has a lock on it.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://andrewmarkle.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://andrewmarkle.com/about/</guid>
+      <description>something -- </description>
     </item>
     
   </channel>
