@@ -6,9 +6,26 @@ publishDir = "docs"
 
 [params]
   title = "Andrew Markle"
-  description = "I'm Andrew Markle. I write code and give talks."
+  description = "Hi, I'm Andrew and I'm a software developer."
   twitter_name = "andrewmarkle"
   github = "andrewmarkle"
+
+  # Navigation
+  [params.navigation]
+    brand = "Andrew Markle"
+
+    [params.navigation.links]
+      about     = "About"
+      services  = "Services"
+      portfolio = "Portfolio"
+      contact   = "Contact"
+
+      # About section
+      [params.about]
+        headline    = "We've got what you need!"
+        description = "[Lorem](//google.com) ipsum dolor sit amet, consectetur adipisicing elit. Praesentium similique eos eligendi error veritatis harum, sed aliquid totam, quam minus neque enim est architecto, ad. Maiores, aliquid, vitae!"
+        buttonText  = "Get started!"
+
 
 [author]
   homepage = "http://andrewmarkle.com"

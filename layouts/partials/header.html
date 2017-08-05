@@ -1,6 +1,11 @@
+<!-- <div id="page-top">
+  {{ if or .Site.Params.navigation.links.about .Site.Params.navigation.links.services .Site.Params.navigation.links.portfolio .Site.Params.navigation.links.contact }}
+      {{ partial "nav.html" . }}
+  {{ end }}
+</div> -->
 <header id="site-header">
     <div class="container">
-        <a href="{{ .Site.BaseURL }}" alt="{{ .Site.Title }}"><h1 class="blog-title heading">Hey there.</h1></a>
+        <a href="{{ .Site.BaseURL }}" alt="{{ .Site.Title }}"><h1 class="blog-title heading">Andrew Markle</h1></a>
         <p class="blog-description">{{ .Site.Params.description }}</p>
     </div>
 </header>
